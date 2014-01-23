@@ -10,6 +10,12 @@ local GeneratePlayerInfo =
 			return "null"
 		end
 		
+		local ip = "null"
+		
+		if ServVer == "0.1.2" then
+			ip = p:GetIP()
+		end
+		
 		local veh = "null"
 		
 		if p:InVehicle() then
@@ -28,6 +34,7 @@ local GeneratePlayerInfo =
 		
 		return p:GetId()..","
 		..p:GetName()..","
+		..ip..","
 		..tostring(p:GetSteamId())..","
 		..p:GetPing()..","
 		..veh..","
@@ -43,6 +50,12 @@ local GeneratePlayerData =
 			return "null"
 		end
 		
+		local ip = "null"
+		
+		if ServVer == "0.1.2" then
+			ip = p:GetIP()
+		end
+		
 		local veh = "null"
 		
 		if p:InVehicle() then
@@ -53,6 +66,7 @@ local GeneratePlayerData =
 		
 		return p:GetId()..","
 		..p:GetName()..","
+		..ip..","
 		..tostring(p:GetSteamId())..","
 		..p:GetPing()..","
 		..veh..","
