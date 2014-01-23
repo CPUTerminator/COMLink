@@ -17,9 +17,11 @@ local GeneratePlayerInfo =
         end
         
         local veh = "null"
+        local veh_health = -1
         
         if p:InVehicle() then
             veh = p:GetVehicle():GetName()
+            veh_health = p:GetVehicle():GetHealth()
         end
         
         local wep = p:GetEquippedWeapon()
@@ -38,9 +40,11 @@ local GeneratePlayerInfo =
         ..tostring(p:GetSteamId())..","
         ..p:GetPing()..","
         ..veh..","
+        ..veh_health..","
         ..wep..","
         ..p:GetHealth()..","
         ..tostring(p:GetParachuting())..","
+        ..p:GetLinearVelocity():LengthSqr()..","
         ..pos.x..","..pos.y..","..pos.z
     end
     
@@ -133,7 +137,7 @@ function Processor.process(request, ReqID)
                 return "null"
             end
         
-            local p = Player.GetById(request[3])
+            local p = Player.GetById(tonumber(request[3]))
             
             if p ~= nil then
                 return GeneratePlayerInfo(p)
@@ -226,7 +230,7 @@ function Processor.process(request, ReqID)
                 else
                     p:Ban()
                 end
-                
+
                 return "OK"
             elseif command == "KICK" then
                 if hasMsg then
@@ -234,7 +238,7 @@ function Processor.process(request, ReqID)
                 else
                     p:Kick()
                 end
-                
+
                 return "OK"
             elseif command == "CHAT" then
                 if not hasMsg then
@@ -244,9 +248,9 @@ function Processor.process(request, ReqID)
                 if color == nil then
                     return "NO_COLOR"
                 end
-                
+
                 Chat:Send(p, msg, color)
-                
+
                 return "OK"
             end
         end
