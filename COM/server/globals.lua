@@ -1,9 +1,9 @@
 function string.starts(String,Start)
-   return string.sub(String,1,string.len(Start))==Start
+    return string.sub(String,1,string.len(Start))==Start
 end
 
 function string.ends(String,End)
-   return End=='' or string.sub(String,-string.len(End))==End
+    return End=='' or string.sub(String,-string.len(End))==End
 end
 
 function string.split(String, delimiter)
@@ -15,7 +15,7 @@ function string.split(String, delimiter)
 end
 
 function string.trim(s)
-  return s:match'^%s*(.*%S)' or ''
+    return s:match'^%s*(.*%S)' or ''
 end
 
 function toboolean(v)
