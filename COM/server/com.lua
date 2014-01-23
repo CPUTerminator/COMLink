@@ -39,6 +39,7 @@ ProcessDO = true
 
 -- Setup --
 ActiveLinks = {}
+ServVer = "UNKNOWN"
 
 io.stderr:setvbuf("no") -- Disable output buffering
 io.stdout:setvbuf("no") -- Disable output buffering

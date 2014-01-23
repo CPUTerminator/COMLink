@@ -143,8 +143,9 @@ function SERVER_COM:StartHandshake()
 			if string.starts(response, "VALIDATE ") then
 				local resp = string.split(response, " ")
 				local GUI_VER = resp[2]
-				self.UseHash = toboolean(resp[3])
-
+				ServVer = resp[3]
+				self.UseHash = toboolean(resp[4])
+				
 				if (tonumber(GUI_VER) < MIN_GUI_VER) then
 					if not VER_WARNING then
 						print("GUI is outdated! Please update to v"..MIN_GUI_VER.."!")
