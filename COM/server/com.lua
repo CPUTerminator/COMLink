@@ -6,8 +6,8 @@
 -- MinPollTime: Minimum time between two requests on the same COM link. Shorter polling time means faster polling but packet drop might become an issue.
 --              Please note that this is merely a hint value for the GUI and is not actively enforced by the COM module itself.
 -- MaxPacketSize: Maximum packet size to use before fragmenting. Values are in bytes, do not set less than 100. This value specifies a maximum and is not a
-                  guarantee that packets will be of this size. It is strongly recommended to not decrease this value below default.
-                  WARNING: This feature is currently broken and may be fixed in future releases, fragmentation will NOT occur regardless of this value.
+--                guarantee that packets will be of this size. It is strongly recommended to not decrease this value below default.
+--                WARNING: This feature is currently broken and may be fixed in future releases, fragmentation will NOT occur regardless of this value.
 -- DynamicLinks: Allows COM links to be dynamically created and closed through the GUI without reloading the module.
 -- ProcessGET: Whether or not to process GET directives (obtaining values from server, e.g: get player count, get server time, etc)
 -- ProcessDO: Whether or not to process DO directives (actively tell the server to do things, e.g: chat, kick player, ban player, etc)
