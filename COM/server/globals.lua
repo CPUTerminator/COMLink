@@ -11,7 +11,8 @@ function string.split(String, delimiter)
     for match in (String..delimiter):gmatch("(.-)"..delimiter) do
         table.insert(result, match);
     end
-    return result;
+
+    return result
 end
 
 function string.trim(s)
