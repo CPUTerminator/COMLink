@@ -142,7 +142,7 @@ function Processor.process(request, ReqID)
             if p ~= nil then
                 return GeneratePlayerInfo(p)
             else
-                return request[3].." null"
+                return request[3]..",null"
             end
         elseif command == "PLAYERDATA" then
             local playerdata = ""
