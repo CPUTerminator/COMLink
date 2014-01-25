@@ -20,8 +20,8 @@ local COM_LINKS = {
         RCV_PORT = 8002
     }
 }
--- Default: 75ms
-MinPollTime = 75
+-- Default: 50ms
+MinPollTime = 50
 
 -- Default: 20000 bytes
 MaxPacketSize = 20000
