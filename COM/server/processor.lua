@@ -9,31 +9,31 @@ local GeneratePlayerInfo =
         if p == nil then
             return "null"
         end
-        
+
         local ip = "null"
         
-        if ServVer == "0.1.2" then
+        if supports("IP") then
             ip = p:GetIP()
         end
-        
+
         local veh = "null"
         local veh_health = -1
-        
+
         if p:InVehicle() then
             veh = p:GetVehicle():GetName()
             veh_health = p:GetVehicle():GetHealth()
         end
-        
+
         local wep = p:GetEquippedWeapon()
-        
+
         if wep ~= nil then
             wep = wep.id
         else
             wep = -1
         end
-        
+
         local pos = p:GetPosition()
-        
+
         return p:GetId()..","
         ..p:GetName()..","
         ..ip..","
@@ -56,7 +56,7 @@ local GeneratePlayerData =
         
         local ip = "null"
         
-        if ServVer == "0.1.2" then
+        if supports("IP") then
             ip = p:GetIP()
         end
         
@@ -85,7 +85,7 @@ function Processor.process(request, ReqID)
         end
 
         -- Handle incoming get request
-        
+
         local command = request[2]:upper()
         
         if command == "PLAYERCOUNT" then
