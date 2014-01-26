@@ -143,7 +143,7 @@ function SERVER_COM:StartHandshake()
             if string.starts(response, "VALIDATE ") then
                 local resp = string.split(response, " ")
                 local GUI_VER = resp[2]
-                ServVer = resp[3]
+                ServVer = tonumber(resp[3])
                 self.UseHash = toboolean(resp[4])
                 
                 if (tonumber(GUI_VER) < MIN_GUI_VER) then
