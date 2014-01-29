@@ -1,5 +1,5 @@
-local COM_VER = 1.0
-local MIN_GUI_VER = 1.0
+local COM_VER = 1.1
+local MIN_GUI_VER = 1.1
 local VER_WARNING = false
 local sid = 0
 
@@ -170,7 +170,7 @@ function SERVER_COM:StartHandshake()
 
     self.COMLINK:Receive(RCV_HANDSHAKE)
 
-    self:Send("VALIDATE "..COM_VER.." "..MinPollTime.." "..tostring(ProcessGET).." "..tostring(ProcessDO).." "..tostring(DynamicLinks).." "..tostring(Config:GetValue("Server", "Announce")))
+    self:Send("VALIDATE "..COM_VER.." "..MinPollTime.." "..tostring(ProcessGET).." "..tostring(ProcessDO).." "..tostring(DynamicLinks).." "..base64enc(tostring(Config:GetValue("Server", "Name"))).." "..base64enc(tostring(Config:GetValue("Server", "Description"))).." "..tostring(Config:GetValue("Server", "Announce")))
 end
 
 --[[

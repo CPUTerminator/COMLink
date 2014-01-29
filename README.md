@@ -15,6 +15,6 @@ See the [Issues Section](https://github.com/CPUTerminator/COMLink/issues) for cu
 Version
 -------
 
-Current COMLink Version: 1.0
+Current COMLink Version: 1.1
 
-Current GUI Version: 1.0
+Current GUI Version: 1.1
