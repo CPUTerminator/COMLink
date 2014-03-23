@@ -17,4 +17,4 @@ Version
 
 Current COMLink Version: 1.1
 
-Current GUI Version: 1.2
+Current GUI Version: 1.3
